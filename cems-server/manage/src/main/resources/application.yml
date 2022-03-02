@@ -1,0 +1,27 @@
+server:
+  port: 7020
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: manage-service
+  datasource:
+    username: root
+    password: xxxxxx
+    url: jdbc:mysql://localhost/cems?serverTimezone=GMT%2B8
+  jackson:
+    default-property-inclusion: non_null
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
